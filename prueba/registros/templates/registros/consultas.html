@@ -1,0 +1,66 @@
+{%  extends "inicio/encabezado.html" %}
+
+{% block titulo%}
+CONSULTAS
+{%endblock%}
+
+{%block imagen%}
+    {%load static%}
+    {%static 'inicio/img/home.png'%}
+{%endblock%}
+
+{%block mensaje%}
+    Principal -DSM-
+{%endblock%}
+
+{%block encabezado%}
+<div class="page-header">
+    <div class="page-title">
+        <h3>Alumnos
+        <small>Lista de Alumnos 9A</small></h3>
+    </div>
+
+    
+</div>
+<!-- /Encabezado-->
+{%endblock%}
+
+{% block contenido %}
+<!-- Contenido Principal-->
+    <div>
+        <table class="table table-bordered table" description="">
+            <caption>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Carrera</th>
+                    <th>Turno</th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                {%for alumno in alumnos%}
+                <tr>
+                    <td class="text-center"><img src="{{alumno.imagen.url}}" alt="" class="img-media"> </td>
+                    <td class="text-semibold">{{alumno.matricula}}</td>
+                    <td class="muted">{{alumno.nombre}}</td>
+                    <td class="muted">{{alumno.carrera}}</td>
+                    <td class="muted">{{alumno.turno}}</td>
+                    <td class="muted text-center"><a href="{% url 'Editaral' alumno.matricula%}">Edit</a> </td>
+                    <td class="muted text-center text-dark"><a href="{%url 'Eliminacion' alumno.matricula%}">Eliminar</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </div>
+
+    <!--Encabezdo -->
+
+
+<!-- /Contenido Principal-->
+{% endblock %}

@@ -1,0 +1,60 @@
+{%  extends "inicio/encabezado.html" %}
+
+{% block titulo%}
+PRINCIPAL
+{%endblock%}
+
+{%block imagen%}
+    {%load static%}
+    {%static 'inicio/img/home.png'%}
+{%endblock%}
+
+{%block mensaje%}
+    Principal -DSM-
+{%endblock%}
+
+{%block encabezado%}
+<div class="page-header">
+    <div class="page-title">
+        <h3>Alumnos
+        <small>Lista de Alumnos 9A</small></h3>
+    </div>
+
+    
+</div>
+<!-- /Encabezado-->
+{%endblock%}
+
+{% block contenido %}
+<!-- Contenido Principal-->
+    <div>
+        <table class="table table-bordered table" description="">
+            <caption>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Matricula</th>
+                    <th>Nombre</th>
+                    <th>Carrera</th>
+                    <th>Turno</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="text-center"><img src="" alt="" class="img-media"> </td>
+                    <td class="text-semibold">UTM190048TI</td>
+                    <td class="muted">Natalia</td>
+                    <td class="muted">Tic</td>
+                    <td class="muted">Matutino</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--Encabezdo -->
+
+
+<!-- /Contenido Principal-->
+{% endblock %}
